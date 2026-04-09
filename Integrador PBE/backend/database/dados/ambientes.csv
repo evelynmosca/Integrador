@@ -1,0 +1,142 @@
+﻿local;descricao;responsavel
+1;Diretoria;4
+2;Segurança do Trabalho;18
+3;Analista de Qualidade de Vida;27
+4;Copa;11
+5;Núcleo de Inovação;20
+6;Orientação Educacional - Térreo;7
+7;Recepção;37
+8;Sala de Reuniões - NID;22
+9;Secretaria;12
+10;Servidor;39
+11;Biblioteca;15
+12;Zeladoria;12
+13;Coordenação de Estágio;7
+14;Coordenação Pedagógica;14
+15;Coordenação do Curso Superior;33
+16;Coordenação Técnica;5
+17;Material Didático Impresso;13
+18;Sala de Reuniões 1º Andar;18
+19;Lab. de Eletrônica A01;14
+20;Lab. de Eletrônica A02;14
+21;Lab. de Eletrônica A03;37
+22;Lab. de Informática A01;31
+23;Lab. de Informática A02;1
+24;Lab. de Informática A04;16
+25;Sala de Aula - A01;8
+26;Sala de Aula - A02;18
+27;Sala de Aula - A03;2
+28;Sala de Aula - A04;25
+29;Sala de Docentes - 1º Andar;34
+30;Manutenção de Equipamentos de Informática;14
+31;MDI - Livros;7
+32;Sala de Aula - A05;23
+33;Sala de Aula - A06;16
+34;Sala de Aula - A07;6
+35;Sala de Aula - A08;6
+36;Sala de Aula - A09;18
+37;Sala de Aula - A10;19
+38;Sala de Aula - A11;32
+39;Sala de Aula - A12;18
+40;Sala de Aula - A13;30
+41;Sala de Aula - A14;14
+42;Lab. de Informática A06;40
+43;Sala de Aula - B05;7
+44;Baixa Elétrica;22
+45;Portaria;40
+46;CAI Aeroespacial;28
+47;Sala EAD - SAEP e OC;38
+48;Sala A21 - Depósito Temporário;12
+49;Caldeiraria;22
+50;Almoxarifado;25
+51;Depósito de Eletroeletrônica;7
+52;Entreposto;31
+53;Docentes - Geral;14
+54;OPP Eletroeletrônica - Depósito;10
+55;OPP - Eletroeletrônica;33
+56;OPP Fabricação Mecânica;28
+57;OPP - Metalmecânica;19
+58;Oficina - Ajustagem 01;35
+59;Oficina - Ajustagem 02;30
+60;Oficina - Ajustagem 03;1
+61;Oficina - Ajustagem 04;33
+62;CNC Ferramentaria;18
+63;FMS - Didático (Novo - Baixa Mobiliário Alex);38
+64;Lab. de Acionamento de Máquinas;25
+65;Lab. de Automação Predial;23
+66;Lab. de Ensaios Mecânicos;20
+67;Lab. de Eletroerosão;34
+68;Lab. de Informática A03;25
+69;Lab. de Metrologia 01;20
+70;Lab. de Projetos de Mecatrônica;34
+71;Lab. de Prototipagem;39
+72;Lab. de Robótica 1;14
+73;Oficina - Bobinamento;33
+74;Oficina - CNC;29
+75;Oficina - Comandos Elétricos;1
+76;Oficina - CT Eletroeletrônica;2
+77;Oficina - Fabricação Mecânica 1;29
+78;FMS - Sistema Flex. Man.;10
+79;Oficina - Fresagem 1;29
+80;Oficina - Manutenção Mecânica;25
+81;Injetora;21
+82;Olimpíada Fresagem CNC;12
+83;Olimpíada Mec. Usinagem;14
+84;Olimpíada Metrologia;39
+85;Olimpíada Molde/Polimec;39
+86;Olimpíada Soldagem;10
+87;Olimpíada Tornearia CNC;7
+88;Oficina - Retificação;13
+89;Olimpíada do Conhecimento (SAEP);18
+90;Oficina - Tornearia 01;13
+91;Oficina - Tornearia 02;11
+92;Oficina - Tornearia 03;25
+93;Oficina - Fresagem 2;22
+94;Manutenção Metalmecânica;13
+95;Lab. CLP 01 (Novo Altus);13
+96;Lab. de Robótica 2;6
+97;Lab. CNC B02;26
+98;Lab. de Eletrohidráulica e Pneumática B01;29
+99;Lab. de Eletrohidráulica B02;16
+100;Memorial Roberto Mange;33
+101;Lab. de Metrologia 02;10
+102;Lab. de Eletropneumática B02;5
+103;Lab. de Eletrônica B01;21
+104;Lab. de Redes;27
+105;Lab. de Redes Intelbras;37
+106;Laboratório Tridimensional;18
+107;Oficina - Instalações Elétricas;8
+108;Sala B02 - Sala de Aula;1
+109;Sala de Tecnologia de Ferramentaria;35
+110;Sala B01 - Sala de Aula;5
+111;Auditório;30
+112;Sala Empilhadeira;20
+113;Corredores / Área Externa;14
+114;Espaço Mix;23
+115;Quadra;25
+116;Refeitório;29
+117;Vestiário;11
+118;Jardinagem;35
+119;Manutenção Predial;34
+120;Marcenaria;20
+121;A Classificar;25
+122;Baixa - Destruição no Local;30
+123;Baixa - Leilão;39
+124;Baixa - Realocação;22
+125;Soldagem - Piso Inferior;3
+126;Soldagem - Piso Superior;30
+127;Lab. de Informática A05;1
+128;Lab. de Manutenção;11
+129;Baixa - Transferência ou Doação;4
+130;Baixa - NR 12;12
+131;Lab. de Informática B01;21
+132;Lab. de Informática B02;12
+133;Lab. de Informática B03;26
+134;Lab. de CAM B01;26
+135;Lab. de CAM B02;20
+136;Lab. de CAM B03;16
+137;Lab. de CAM B04;1
+138;Sala B03 - Sala de Aula;33
+139;Sala B04 - Sala de Aula;5
+140;OPP FIC;10
+141;Oficina - Instalação de Ar Condicionado;19
