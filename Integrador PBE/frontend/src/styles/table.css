@@ -1,0 +1,43 @@
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.data-table th {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+}
+
+.data-table td {
+  color: #e5e7eb;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-ativo {
+  background: rgba(34, 197, 94, 0.14);
+  color: #22c55e;
+}
+
+.status-inativo {
+  background: rgba(239, 68, 68, 0.14);
+  color: #f87171;
+}
