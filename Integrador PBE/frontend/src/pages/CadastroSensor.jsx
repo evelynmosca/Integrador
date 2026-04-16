@@ -31,9 +31,17 @@ function CadastroSensor() {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setForm({ ...form, [name]: value })
-  }
 
+    setForm({
+      ...form,
+      [name]:
+        name === 'status'
+          ? value === 'true'
+          : name === 'ambiente'
+            ? Number(value)
+            : value
+    })
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -79,9 +87,9 @@ function CadastroSensor() {
             <input name="latitude" placeholder="Latitude" value={form.latitude} onChange={handleChange} />
             <input name="longitude" placeholder="Longitude" value={form.longitude} onChange={handleChange} />
 
-            <select name="status" value={form.status} onChange={handleChange}>
-              <option value={true}>Ativo</option>
-              <option value={false}>Inativo</option>
+            <select name="status" value={String(form.status)} onChange={handleChange}>
+              <option value="true">Ativo</option>
+              <option value="false">Inativo</option>
             </select>
 
             <select name="unidade_med" value={form.unidade_med} onChange={handleChange}>

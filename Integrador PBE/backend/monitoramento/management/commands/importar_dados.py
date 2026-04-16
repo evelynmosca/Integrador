@@ -19,7 +19,7 @@ def to_bool(valor):
 
     valor_str = str(valor).strip().lower()
 
-    return valor_str in ['true', '1', '1.0', 'sim', 'ativo']
+    return valor_str in ['true', '1', '1.0', 'sim', 'ativo', 'verdadeiro']
 
 
 class Command(BaseCommand):
@@ -134,7 +134,7 @@ class Command(BaseCommand):
                 identificacao=identificacao_unica,
                 latitude=to_decimal(micro['latitude']),
                 longitude=to_decimal(micro['longitude']),
-                status=to_bool(micro['status']),
+                status=to_bool(row['status']),
                 unidade_med=unidade,
                 ambiente=ambientes_map[int(micro['ambiente'])]
             )

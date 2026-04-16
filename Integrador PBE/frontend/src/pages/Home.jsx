@@ -74,7 +74,7 @@ function Home() {
             </div>
 
             <h3>Umidade</h3>
-            <p>Consulte informações de umidade e acompanhe o comportamento dos sensores cadastrados.</p>
+            <p>Consulte a umidade e acompanhe o comportamento dos sensores cadastrados.</p>
 
             <div className="home-card-footer">
               <span>Acessar dados</span>
