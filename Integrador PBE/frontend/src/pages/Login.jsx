@@ -14,16 +14,34 @@ function Login() {
     setErro('')
 
     try {
+      const usuarioLimpo = username.trim()
+      const senhaLimpa = password.trim()
+
+      console.log('Enviando login:', {
+        username: usuarioLimpo,
+        password: senhaLimpa
+      })
+
       const response = await axios.post('http://127.0.0.1:8000/api/token/', {
-        username,
-        password
+        username: usuarioLimpo,
+        password: senhaLimpa
       })
 
       localStorage.setItem('access', response.data.access)
       localStorage.setItem('refresh', response.data.refresh)
 
+      const meResponse = await axios.get('http://127.0.0.1:8000/api/me/', {
+        headers: {
+          Authorization: `Bearer ${response.data.access}`
+        }
+      })
+
+      localStorage.setItem('usuario', JSON.stringify(meResponse.data))
+
       navigate('/home')
     } catch (error) {
+      console.log('Erro completo:', error)
+      console.log('Resposta do servidor:', error.response?.data)
       setErro('Usuário ou senha inválidos.')
     }
   }
@@ -37,14 +55,14 @@ function Login() {
         <form onSubmit={fazerLogin}>
           <input
             type="text"
-            placeholder="Usuário" // evelyn
+            placeholder="Usuário"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
 
           <input
-            type="password" // 123
-            placeholder="Senha" 
+            type="password"
+            placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

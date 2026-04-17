@@ -14,9 +14,12 @@ import {
 function Sidebar() {
   const navigate = useNavigate()
 
+  const usuario = JSON.parse(localStorage.getItem('usuario'))
+
   const sair = () => {
     localStorage.removeItem('access')
     localStorage.removeItem('refresh')
+    localStorage.removeItem('usuario')
     navigate('/login')
   }
 
@@ -34,7 +37,13 @@ function Sidebar() {
         <NavLink to="/luminosidade"><FiSun /> Luminosidade</NavLink>
         <NavLink to="/contador"><FiHash /> Contador</NavLink>
         <NavLink to="/ambientes"><FiMapPin /> Ambientes</NavLink>
-        <NavLink to="/cadastro-sensor"><FiPlusCircle /> Cadastro de Sensor</NavLink>
+
+        {usuario?.is_staff && (
+          <NavLink to="/cadastro-sensor">
+            <FiPlusCircle /> Cadastro de Sensor
+          </NavLink>
+        )}
+
         <NavLink to="/historico"><FiClock /> Histórico</NavLink>
       </nav>
 

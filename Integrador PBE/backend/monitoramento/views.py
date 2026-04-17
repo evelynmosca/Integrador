@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
 from datetime import timedelta
@@ -57,3 +58,13 @@ def medicoes_por_sensor(request, sensor_id):
     medicoes = Historico.objects.filter(sensor_id=sensor_id).order_by('-data_hora')
     serializer = HistoricoSerializer(medicoes, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def me(request):
+    return Response({
+        'id': request.user.id,
+        'username': request.user.username,
+        'tipo': request.user.tipo,
+        'is_staff': request.user.is_staff,
+    })
