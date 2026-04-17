@@ -81,10 +81,10 @@ function CadastroSensor() {
       return
     }
 
-    const buscarAmbientes = async () => {
+    const carregarDados = async () => {
       try {
-        const response = await api.get('ambientes/')
-        setAmbientes(response.data)
+        const resAmbientes = await api.get('ambientes/')
+        setAmbientes(resAmbientes.data)
       } catch (error) {
         console.log(error)
       } finally {
@@ -92,10 +92,11 @@ function CadastroSensor() {
       }
     }
 
-    buscarAmbientes()
+    carregarDados()
   }, [navigate])
 
   const identificacoesDisponiveis = useMemo(() => {
+    if (!form.sensor) return []
     return identificacoesPorTipo[form.sensor] || []
   }, [form.sensor])
 
@@ -103,33 +104,38 @@ function CadastroSensor() {
     const { name, value } = e.target
 
     if (name === 'sensor') {
-      setForm({
-        ...form,
+      setForm((prev) => ({
+        ...prev,
         sensor: value,
         identificacao: ''
-      })
+      }))
       return
     }
 
-    setForm({
-      ...form,
+    setForm((prev) => ({
+      ...prev,
       [name]:
         name === 'status'
           ? value === 'true'
           : name === 'ambiente'
             ? Number(value)
             : value
-    })
+    }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (!form.sensor || !form.identificacao || !form.unidade_med || !form.ambiente) {
+      alert('Preencha todos os campos.')
+      return
+    }
+
     try {
-      await api.post('sensores/', {
+      await api.post('http://127.0.0.1:8000/api/sensores/', {
         ...form,
-        latitude: 0,
-        longitude: 0
+        latitude: '0.00000000',
+        longitude: '0.00000000'
       })
 
       alert('Sensor cadastrado com sucesso!')
@@ -143,7 +149,13 @@ function CadastroSensor() {
       })
     } catch (error) {
       console.log(error)
-      alert('Erro ao cadastrar sensor.')
+      console.log(error.response?.data)
+
+      if (error.response?.data?.identificacao) {
+        alert('Essa identificação já está em uso. Escolha outra.')
+      } else {
+        alert('Erro ao cadastrar sensor.')
+      }
     }
   }
 

@@ -62,7 +62,12 @@ function Contador() {
 
   const salvarEdicao = async () => {
     try {
-      const response = await api.put(`sensores/${sensorEditando.id}/`, sensorEditando)
+      const payload = {
+        status: sensorEditando.status,
+        ambiente: Number(sensorEditando.ambiente)
+      }
+
+      const response = await api.patch(`sensores/${sensorEditando.id}/`, payload)
 
       setSensores(
         sensores.map((sensor) =>
@@ -74,6 +79,7 @@ function Contador() {
       fecharModal()
     } catch (error) {
       console.log(error)
+      console.log(error.response?.data)
       alert('Erro ao editar sensor.')
     }
   }
@@ -142,21 +148,11 @@ function Contador() {
 
                   {usuario?.is_staff && (
                     <td className="actions-cell">
-                      <button
-                        type="button"
-                        className="action-btn edit-btn"
-                        onClick={() => abrirModal(sensor)}
-                        title="Editar"
-                      >
+                      <button type="button" className="action-btn edit-btn" onClick={() => abrirModal(sensor)} title="Editar">
                         <FiEdit2 />
                       </button>
 
-                      <button
-                        type="button"
-                        className="action-btn delete-btn"
-                        onClick={() => excluirSensor(sensor.id)}
-                        title="Excluir"
-                      >
+                      <button type="button" className="action-btn delete-btn" onClick={() => excluirSensor(sensor.id)} title="Excluir">
                         <FiTrash2 />
                       </button>
                     </td>
@@ -177,18 +173,7 @@ function Contador() {
 
               <div className="form-group">
                 <label>Identificação</label>
-                <select
-                  name="identificacao"
-                  value={sensorEditando.identificacao || ''}
-                  onChange={handleChange}
-                >
-                  <option value="">Selecione</option>
-                  {sensores.map((s) => (
-                    <option key={s.id} value={s.identificacao}>
-                      {s.identificacao}
-                    </option>
-                  ))}
-                </select>
+                <input value={sensorEditando.identificacao || ''} disabled />
               </div>
 
               <div className="form-group">
