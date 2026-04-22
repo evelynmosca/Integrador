@@ -55,14 +55,14 @@ function Login() {
         <form onSubmit={fazerLogin}>
           <input
             type="text"
-            placeholder="Usuário"
+            placeholder="Usuário" // evelyn ou usuário1
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
 
           <input
             type="password"
-            placeholder="Senha"
+            placeholder="Senha" // 123 (evelyn) ou 123456 (usuário1)
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

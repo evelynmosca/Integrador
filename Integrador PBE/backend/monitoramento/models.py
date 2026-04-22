@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 class Usuario(AbstractUser):
     TIPO_CHOICES = [
         ('Administrador', 'Administrador'),
@@ -51,7 +52,7 @@ class Sensor(models.Model):
     ]
 
     sensor = models.CharField(max_length=20, choices=SENSOR_CHOICES)
-    identificacao = models.CharField(max_length=50, unique=True)  # mac-address
+    identificacao = models.CharField(max_length=50, unique=True)
     latitude = models.DecimalField(max_digits=10, decimal_places=8)
     longitude = models.DecimalField(max_digits=11, decimal_places=8)
     status = models.BooleanField(default=True)
